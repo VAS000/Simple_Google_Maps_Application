@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+h2 {
+    margin: 10px 0;
+}
+.container {
+    max-width: 100%;
+    margin:0 auto;
+}
+.gmap {
+    width: 50%;
+    height: 350px;
+    cursor: crosshair;
+    float: left;
+}
+.control-area, .actions {
+    border: 1px solid #CCC;
+    padding: 10px;
+    float: left;
+    width: 48%;
+    margin-left: 10px;
+}
+.control-area {
+    border-top: none;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+ul li {
+    display: inline-block;
+    background-color: #333;
+    padding: 6px 10px;
+    font-size: 16px;
+    color: #FFF;
+    margin-right: 7px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+ul li.active {
+    border: 2px solid #32AB50;
+}
+.control-area .box {
+    margin-top: 20px;
+}
+.control-area .box input {
+    display: block;
+    margin: 10px 0;
+}
+.control-area .box button {
+    display: block;
+    padding: 10px;
+    width: 120px;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    background: transparent;
+    background-color: #333;
+    color: #FFF;
+    transition: all 0.3s ease-in-out;
+}
+.control-area .box button:hover {
+    border-color: #333;
+    color: #333;
+    background-color: #FFF;
+}
+.control-area .box button.active {
+    border: 2px solid #D00;
+    background-color: #FFF;
+    color: #333;
+}
+.control-area {
+    display: none;
+    overflow: hidden;
+}
+.control-area .fifty {
+    margin-right: 10%;
+    width: 45%;
+    float: left;
+}
+.control-area .fifty:last-of-type {
+    margin-right: 0;
+}
+.marker_visibility input,
+.polygon_visibility input {
+    display: inline-block !important;
+    margin-left: 12px !important;
+}
+
+.gmap .gm-style-iw ~ div{
+    display: none;
+}
+.gmap .marker-content h4 {
+    margin: 0;
+}

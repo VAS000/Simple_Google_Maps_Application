@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GMAP Example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="gmap" class="gmap"></div>
+
+        <div class="actions">
+            <h2>Actions</h2>
+            <ul class="control-list">
+                <li data-section="marker">Add Marker</li>
+                <li data-section="marker_visibility" id="marker_visibility">Marker Visibility</li>
+                <li data-section="marker_edit" id="marker_edit">Update Marker Location</li>
+                <li data-section="marker_delete" id="marker_delete">Delete Marker</li>
+            </ul>
+            <ul class="control-list">
+                <li data-section="polygon">Add Polygon</li>
+                <li data-section="polygon_visibility" id="polygon_visibility">Polygon Visibility</li>
+                <li data-section="polygon_edit" id="polygon_edit">Update Polygon Borders</li>
+                <li data-section="polygon_delete" id="polygon_delete">Delete Polygon</li>
+            </ul>
+        </div>
+        <!-- Start Markers -->
+
+        <!-- Marker Visibility -->
+        <div class="control-area marker_visibility">
+            <h2>Marker Visibility Area</h2>
+            <div class="box">
+                <label for="select_marker">Select a marker</label>
+                <select class="select_marker" id="select_marker">
+                </select>
+            </div>
+            <div class="box">
+                <label>Marker Visible?</label>
+                <input type="radio" name="m_visibility" value="true" checked>Yes
+                <input type="radio" name="m_visibility" value="false">No
+            </div>
+            <div class="box">
+                <button type="button">Apply</button>
+            </div>
+        </div>
+        
+        <!-- Update Marker -->
+        
+        <div class="control-area marker_edit">
+            <h2>Update Marker Location</h2>
+            <div class="box">
+                <label for="m_edit_select">Select a marker</label>
+                <select id="m_edit_select">
+                </select>
+            </div>
+            <div class="box">
+                <h4>After Clicking The Button Bellow, Just Move The Selected Marker From The Map</h4>
+            </div>
+            <div class="box">
+                <button type="button">Apply</button>
+            </div>
+        </div>
+
+        <!-- Delete Marker -->
+
+        <div class="control-area marker_delete">
+            <h2>Delete Marker</h2>
+            <div class="box">
+                <label for="m_select">Select a marker</label>
+                <select id="m_select">
+                </select>
+            </div>
+            <div class="box">
+                <label>Please Check The Box Bellow To Confirm Delete Operation</label>
+                <input type="checkbox" name="m_confirm">
+            </div>
+            <div class="box">
+                <button type="button">Apply</button>
+            </div>
+        </div>
+
+
+        <!-- Add Marker -->
+
+        <div class="control-area marker">
+            <h2>Add New Marker</h2>
+            <div class="fifty">
+                <div class="box">
+                    <label for="marker_id">Marker ID</label>
+                    <input type="text" id="marker_id" placeholder="Must Be Unique ID">
+                </div>
+                <div class="box">
+                    <label for="marker_text">Label Text</label>
+                    <input type="text" id="marker_text" placeholder="Optional">
+                </div>
+                <div class="box">
+                    <label for="marker_info_text">Marker Info Text</label>
+                    <input type="text" id="marker_info_text" placeholder="Optional">
+                </div>
+                <div class="box">
+                    <button type="button" data-section="marker" class="add">Apply</button>
+                </div>
+            </div>
+            <div class="fifty">
+                <div class="box">
+                    <label for="marker_label_color">Label Color</label>
+                    <input type="color" id="marker_label_color" value="#FFFFFF">
+                </div>
+                <div class="box">
+                    <label for="marker_info_color">Info Text Color</label>
+                    <input type="color" id="marker_info_color" value="#333333">
+                </div>
+            </div>
+        </div>
+        <!-- End Markers -->
+
+        
+        <!-- Start Polygon -->
+
+        <!-- Polygon Visibility  -->
+
+        <div class="control-area polygon_visibility">
+            <h2>Polygon Visibility Area</h2>
+            <div class="box">
+                <label for="select_polygon">Select a polygon</label>
+                <select class="select_polygon" id="select_polygon">
+                </select>
+            </div>
+            <div class="box">
+                <label>Polygon Visible?</label>
+                <input type="radio" name="p_visibility" value="true" checked>Yes
+                <input type="radio" name="p_visibility" value="false">No
+            </div>
+            <div class="box">
+                <button type="button">Apply</button>
+            </div>
+        </div>
+
+
+        <!-- Delete Polygon -->
+
+        <div class="control-area polygon_delete">
+            <h2>Delete Polygon</h2>
+            <div class="box">
+                <label for="pol_select">Select a polygon</label>
+                <select id="pol_select">
+                </select>
+            </div>
+            <div class="box">
+                <label>Please Check The Box Bellow To Confirm Delete Operation</label>
+                <input type="checkbox" name="p_confirm">
+            </div>
+            <div class="box">
+                <button type="button">Apply</button>
+            </div>
+        </div>
+
+
+        <!-- Add Polygon -->
+
+        <div class="control-area polygon">
+            <h2>Add New Polygon</h2>
+            <div class="fifty">
+                <div class="box">
+                    <label for="polygon_name">Polygon Name</label>
+                    <input type="text" id="polygon_name" placeholder="Must Be Unique Name">
+                </div>
+                <div class="box">
+                    <label for="polygon_stroke_color">Polygon Stroke Color</label>
+                    <input type="color" id="polygon_stroke_color" value="#ff4848">
+                </div>
+                <div class="box">
+                    <label for="polygon_stroke_weight">Polygon Stroke Weight</label>
+                    <input type="number" id="polygon_stroke_weight" value="3">
+                </div>    
+                <div class="box">
+                    <button type="button" data-section="polygon" class="add">Apply</button>
+                </div>
+            </div>
+            <div class="fifty">
+                <div class="box">
+                    <label for="polygon_stroke_opacity">Polygon Stroke Opacity</label>
+                    <input type="number" step="0.01" min="0" max="1" id="polygon_stroke_opacity" value="0.3">
+                </div>
+                <div class="box">
+                    <label for="polygon_fill_color">Polygon Fill Color</label>
+                    <input type="color" id="polygon_fill_color" value="#7272FF">
+                </div>
+                <div class="box">
+                    <label for="polygon_fill_opacity">Polygon Fill Opacity</label>
+                    <input type="number" step="0.01" min="0" max="1" id="polygon_fill_opacity" value="0.3">
+                </div>
+            </div>
+        </div>
+
+        <!-- Update Polygon -->
+
+        <div class="control-area polygon_edit">
+            <h2>Update Polygon Borders</h2>
+            <div class="box">
+                <label for="p_edit_select">Select a polygon</label>
+                <select id="p_edit_select">
+                </select>
+            </div>
+            <div class="box">
+                <h4>After Clicking The Button Bellow, Just Chance The Selected Polygon Borders</h4>
+            </div>
+            <div class="box">
+                <button type="button">Apply</button>
+            </div>
+        </div>
+
+        <!-- End Polygon -->
+    </div>
+    
+    <script src="jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYoA_ssVjZ57X17X-GuZZ2POaL11B4LTU"></script>
+
+</body>
+</html>
